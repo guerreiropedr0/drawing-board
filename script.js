@@ -1,8 +1,7 @@
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 600;
+canvas.height = 600;
 
 const mouse = {
   x: null,
@@ -13,16 +12,11 @@ const pencil = {
   isDrawing: false,
   x: mouse.x,
   y: mouse.y,
-  color: 'white',
-  width: 10,
+  color: 'black',
+  width: 3,
 }
 
 let currentTool = pencil;
-
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-})
 
 canvas.addEventListener('mousemove', (event) => {
   mouse.x = event.x;
@@ -53,8 +47,17 @@ const draw = (tool) => {
   }
 }
 
+const changeToolColor = (tool, color) => {
+  let changedTool = tool;
+
+  changedTool.color = color;
+
+  return changedTool;
+}
+
 canvas.addEventListener('mousedown', () => {
   currentTool.isDrawing = true;
+  draw(currentTool); // Enable taps(dots) on the canvas
 })
 
 canvas.addEventListener('mouseup', () => {
@@ -65,7 +68,16 @@ canvas.addEventListener('mouseout', () => {
   currentTool.isDrawing = false;
 })
 
-
 canvas.addEventListener('mousemove', () => {
   draw(currentTool);
 });
+
+const colorButtons = document.querySelectorAll('.color');
+
+colorButtons.forEach(colorButton => {
+  colorButton.addEventListener('click', (event) => {
+    const color = event.target.value;
+
+    changeToolColor(currentTool, color);
+  })
+})
