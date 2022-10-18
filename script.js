@@ -10,7 +10,7 @@ const mouse = {
 }
 
 const pencil = {
-  isPainting: false,
+  isDrawing: false,
   x: mouse.x,
   y: mouse.y,
   color: 'white',
@@ -38,8 +38,8 @@ const updateToolPositions = (tool) => {
   return updatedTool;
 }
 
-const paint = (tool) => {
-  if (tool.isPainting) {
+const draw = (tool) => {
+  if (tool.isDrawing) {
     updateToolPositions(tool);
 
     ctx.lineWidth = tool.width;
@@ -54,18 +54,18 @@ const paint = (tool) => {
 }
 
 canvas.addEventListener('mousedown', () => {
-  currentTool.isPainting = true;
+  currentTool.isDrawing = true;
 })
 
 canvas.addEventListener('mouseup', () => {
-  currentTool.isPainting = false;
+  currentTool.isDrawing = false;
 })
 
 canvas.addEventListener('mouseout', () => {
-  currentTool.isPainting = false;
+  currentTool.isDrawing = false;
 })
 
 
 canvas.addEventListener('mousemove', () => {
-  paint(currentTool);
+  draw(currentTool);
 });
