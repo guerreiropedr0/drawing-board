@@ -41,10 +41,15 @@ const updateToolPositions = (tool) => {
 const paint = (tool) => {
   if (tool.isPainting) {
     updateToolPositions(tool);
-    ctx.fillStyle = tool.color;
+
+    ctx.lineWidth = tool.width;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = tool.color;
+
+    ctx.lineTo(tool.x, tool.y);
+    ctx.stroke();
+  } else {
     ctx.beginPath();
-    ctx.arc(tool.x, tool.y, tool.width, 0, Math.PI * 2);
-    ctx.fill();
   }
 }
 
@@ -55,6 +60,11 @@ canvas.addEventListener('mousedown', () => {
 canvas.addEventListener('mouseup', () => {
   currentTool.isPainting = false;
 })
+
+canvas.addEventListener('mouseout', () => {
+  currentTool.isPainting = false;
+})
+
 
 canvas.addEventListener('mousemove', () => {
   paint(currentTool);
