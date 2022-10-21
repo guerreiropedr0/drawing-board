@@ -11,12 +11,10 @@ body {
 
 .color {
   background: none;
-	color: inherit;
 	border: none;
 	padding: 1rem;
-	font: inherit;
 	cursor: pointer;
-	outline: inherit;
+	outline: none;
 }
 
 .red {
