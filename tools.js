@@ -41,6 +41,31 @@ const colorChanger = (state) => {
   }
 }
 
+const clearer = () => {
+  return {
+    clearAll: () => ctx.clearRect(0, 0, canvas.width, canvas.height)
+  }
+}
+
+const erase = (state) => {
+  return {
+    startErasing: () => state.isErasing = true,
+    stopErasing: () => state.isErasing = false,
+    erase: () => {
+      if (state.isErasing) {
+        update(state).positions();
+
+        ctx.lineWidth = state.width;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = 'white';
+
+        ctx.lineTo(state.x, state.y);
+        ctx.stroke();
+      }
+    },
+  }
+}
+
 const createPencil = () => {
   let state = {
     name: 'pencil',
@@ -54,10 +79,28 @@ const createPencil = () => {
   return Object.assign(
     state,
     painter(state),
-    colorChanger(state)
+    colorChanger(state),
+    clearer()
+  )
+}
+
+const createEraser = () => {
+  let state = {
+    name: 'eraser',
+    isErasing: false,
+    x: null,
+    y: null,
+    width: 10,
+  }
+
+  return Object.assign(
+    state,
+    erase(state),
+    clearer()
   )
 }
 
 const pencil = createPencil();
+const eraser = createEraser();
 
-export { mouse, pencil };
+export { mouse, pencil, eraser };
