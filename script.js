@@ -25,8 +25,8 @@ const pencil = {
 let currentTool = pencil;
 
 canvas.addEventListener('mousemove', (event) => {
-  mouse.x = event.x;
-  mouse.y = event.y;
+  mouse.x = event.offsetX;
+  mouse.y = event.offsetY;
 })
 
 const updateToolPositions = (tool) => {
