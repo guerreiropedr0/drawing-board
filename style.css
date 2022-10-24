@@ -8,39 +8,3 @@ body {
   border: 2px solid #000;
   border-radius: 0.7rem;
 }
-
-.color {
-  background: none;
-	border: none;
-	padding: 1rem;
-	cursor: pointer;
-	outline: none;
-}
-
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
-.orange {
-  background-color: orange;
-}
-
-.pink {
-  background-color: pink;
-}
-
-.purple {
-  background-color: purple;
-}
