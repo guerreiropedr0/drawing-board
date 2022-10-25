@@ -66,6 +66,15 @@ const erase = (state) => {
   }
 }
 
+const filler = (state) => {
+  return {
+    fill: () => {
+      ctx.fillStyle = state.color;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+}
+
 const createPencil = () => {
   let state = {
     name: 'pencil',
@@ -80,7 +89,8 @@ const createPencil = () => {
     state,
     painter(state),
     colorChanger(state),
-    clearer()
+    clearer(),
+    filler(state)
   )
 }
 

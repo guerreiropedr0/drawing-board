@@ -5,7 +5,8 @@ const ctx = canvas.getContext('2d');
 const colorPicker = document.querySelector('#color_picker');
 const eraserBtn = document.querySelector('#eraser');
 const clearAllBtn = document.querySelector('#clear_all');
-const DEFAULT_COLOR_PICKER_COLOR = 'black';
+const fillColor = document.querySelector('#fill_color');
+const DEFAULT_COLOR_PICKER_COLOR = '#000000';
 
 colorPicker.value = DEFAULT_COLOR_PICKER_COLOR;
 
@@ -65,6 +66,10 @@ eraserBtn.addEventListener('click', () => {
 
 clearAllBtn.addEventListener('click', () => {
   currentTool.clearAll();
+})
+
+fillColor.addEventListener('click', () => {
+  currentTool.fill();
 })
 
 export default ctx;
