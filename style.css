@@ -1,10 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #60554e;
+  font-family: 'Roboto', sans-serif;
 }
 
 #canvas {
-  width: 600px;
-  height: 600px;
-  border: 2px solid #000;
-  border-radius: 0.7rem;
+  margin-top: 1rem;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  background-color: #fff;
 }
+
+#control_panel {
+  background-color: #262121;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.selected {
+  border-bottom: 2px solid #fff;
+}
+
+.pencil-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#pencil_modal {
+  color: #fff;
+  display: none;
+  background-color: #433b31;
+  position: absolute;
+  top: -300%;
+  left: -135%;
+}
+
+.pencil-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem 0 1rem;
+}
+
+.pencil-specs li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#color_picker {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.bottom-arrow {
+  border-bottom: 2px solid #433b31;
+}
+
+.bottom-arrow:after {
+  content:'';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #433b31;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 23px;
+  height: 23px;
+}
+
+.btn:hover,
+#color_picker:hover {
+  transform: scale(1.1);
+}
+
+.btn:active,
+#color_picker:active {
+  transform: scale(1);
+}
+
+/* 060200
+17080c
+262121
+433b31
+60554e */

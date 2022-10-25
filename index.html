@@ -10,10 +10,30 @@
 <body>
   <canvas id="canvas"></canvas>
   <div id="control_panel">
-    <input id="color_picker" type="color">
-    <button id="eraser" type="button">ERASER</button>
-    <button id="clear_all" type="button">CLEAR ALL</button>
-    <img id="fill_color" src="./assets/fill.png" alt="Fill color">
+    <div class="pencil-container">
+      <div class="bottom-arrow" id="pencil_modal">
+        <ul class="pencil-specs">
+          <li>COLOR: <input id="color_picker" type="color"></li>
+          <li>
+            WIDTH:
+            <button id="pencil_width_decrement" class="btn" type="button">-</button>
+            <p id="pencil_width">5</p>
+            <button id="pencil_width_increment" class="btn" type="button">+</button>
+          </li>
+        </ul>
+      </div>
+      <img id="pencil" class="icon selected" src="./assets/pencil.png" alt="Pencil">
+    </div>
+    <img id="eraser" class="icon" src="./assets/eraser.png" alt="Eraser">
+    <!--
+    <button id="clear_all" type="button">CLEAR ALL</button> -->
+    <img class="icon" id="fill_color" src="./assets/fill.png" alt="Fill color">
+  </div>
+
+  <div id="eraser_modal">
+    <ul>
+      <li>WIDTH: </li>
+    </ul>
   </div>
   <script type="module" src="./script.js"></script>
 </body>
