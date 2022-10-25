@@ -33,29 +33,32 @@ body {
   border-bottom: 2px solid #fff;
 }
 
-.pencil-container {
+.container {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-#pencil_modal {
+.modal {
   color: #fff;
   display: none;
   background-color: #433b31;
   position: absolute;
-  top: -300%;
-  left: -135%;
 }
 
-.pencil-specs {
+#pencil_modal {
+  top: -290%;
+  left: -140%;
+}
+
+.tool-specs {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 0 1rem 0 1rem;
 }
 
-.pencil-specs li {
+.tool-specs li {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -106,6 +109,19 @@ body {
 .btn:active,
 #color_picker:active {
   transform: scale(1);
+}
+
+#clear_all {
+  cursor: pointer;
+  background-color: #ce4040;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+}
+
+#eraser_modal {
+  top: -320%;
+  left: -155%;
 }
 
 /* 060200
