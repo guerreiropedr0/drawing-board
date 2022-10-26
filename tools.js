@@ -28,6 +28,8 @@ const painter = (state) => {
 
         ctx.lineTo(state.x, state.y);
         ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(state.x, state.y);
       } else {
         ctx.beginPath();
       }
@@ -82,7 +84,7 @@ const createPencil = () => {
     x: null,
     y: null,
     color: 'black',
-    width: 5,
+    width: 50,
   }
 
   return Object.assign(
