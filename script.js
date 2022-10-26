@@ -91,16 +91,16 @@ pencilBtn.addEventListener('click', () => {
 })
 
 pencilWidthDecrement.addEventListener('click', () => {
-  if (currentTool.width > 1) {
-    currentTool.width -= 1;
-    pencilWidthEle.textContent = currentTool.width;
+  if (currentTool.size > 1) {
+    currentTool.size -= 1;
+    pencilWidthEle.textContent = currentTool.size;
   }
 })
 
 pencilWidthIncrement.addEventListener('click', () => {
-  if (currentTool.width < 50) {
-    currentTool.width += 1;
-    pencilWidthEle.textContent = currentTool.width;
+  if (currentTool.size < 50) {
+    currentTool.size += 1;
+    pencilWidthEle.textContent = currentTool.size;
   }
 })
 
@@ -124,16 +124,16 @@ eraserBtn.addEventListener('click', () => {
 
 
 eraserWidthDecrement.addEventListener('click', () => {
-  if (currentTool.width > 1) {
-    currentTool.width -= 1;
-    eraserWidthEle.textContent = currentTool.width;
+  if (currentTool.size > 1) {
+    currentTool.size -= 1;
+    eraserWidthEle.textContent = currentTool.size;
   }
 })
 
 eraserWidthIncrement.addEventListener('click', () => {
-  if (currentTool.width < 50) {
-    currentTool.width += 1;
-    eraserWidthEle.textContent = currentTool.width;
+  if (currentTool.size < 50) {
+    currentTool.size += 1;
+    eraserWidthEle.textContent = currentTool.size;
   }
 })
 

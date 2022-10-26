@@ -22,7 +22,7 @@ const painter = (state) => {
       if (state.isPainting) {
         update(state).positions();
 
-        ctx.lineWidth = state.width;
+        ctx.lineWidth = state.size;
         ctx.lineCap = "round";
         ctx.strokeStyle = state.color;
 
@@ -57,7 +57,7 @@ const erase = (state) => {
       if (state.isErasing) {
         update(state).positions();
 
-        ctx.lineWidth = state.width;
+        ctx.lineWidth = state.size;
         ctx.lineCap = "round";
         ctx.strokeStyle = 'white';
 
@@ -84,7 +84,7 @@ const createPencil = () => {
     x: null,
     y: null,
     color: 'black',
-    width: 50,
+    size: 50,
   }
 
   return Object.assign(
@@ -102,7 +102,7 @@ const createEraser = () => {
     isErasing: false,
     x: null,
     y: null,
-    width: 10,
+    size: 10,
   }
 
   return Object.assign(
