@@ -84,7 +84,7 @@ const createPencil = () => {
     x: null,
     y: null,
     color: 'black',
-    size: 50,
+    size: 5,
   }
 
   return Object.assign(

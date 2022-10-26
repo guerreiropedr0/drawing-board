@@ -7,14 +7,14 @@ const controlPanel = document.querySelector('#control_panel');
 const pencilBtn = document.querySelector('#pencil');
 const pencilModal = document.querySelector('#pencil_modal');
 const colorPicker = document.querySelector('#color_picker');
-const pencilWidthIncrement = document.querySelector('#pencil_width_increment');
-const pencilWidthEle = document.querySelector('#pencil_width');
-const pencilWidthDecrement = document.querySelector('#pencil_width_decrement');
+const pencilSizeIncrement = document.querySelector('#pencil_size_increment');
+const pencilSizeEle = document.querySelector('#pencil_size');
+const pencilSizeDecrement = document.querySelector('#pencil_size_decrement');
 const eraserBtn = document.querySelector('#eraser');
 const eraserModal = document.querySelector('#eraser_modal');
-const eraserWidthIncrement = document.querySelector('#eraser_width_increment');
-const eraserWidthEle = document.querySelector('#eraser_width');
-const eraserWidthDecrement = document.querySelector('#eraser_width_decrement');
+const eraserSizeIncrement = document.querySelector('#eraser_size_increment');
+const eraserSizeEle = document.querySelector('#eraser_size');
+const eraserSizeDecrement = document.querySelector('#eraser_size_decrement');
 const clearAllBtn = document.querySelector('#clear_all');
 const fillColor = document.querySelector('#fill_color');
 const DEFAULT_COLOR_PICKER_COLOR = '#000000';
@@ -90,17 +90,17 @@ pencilBtn.addEventListener('click', () => {
   eraserModal.style.display = 'none';
 })
 
-pencilWidthDecrement.addEventListener('click', () => {
+pencilSizeDecrement.addEventListener('click', () => {
   if (currentTool.size > 1) {
     currentTool.size -= 1;
-    pencilWidthEle.textContent = currentTool.size;
+    pencilSizeEle.textContent = currentTool.size;
   }
 })
 
-pencilWidthIncrement.addEventListener('click', () => {
+pencilSizeIncrement.addEventListener('click', () => {
   if (currentTool.size < 50) {
     currentTool.size += 1;
-    pencilWidthEle.textContent = currentTool.size;
+    pencilSizeEle.textContent = currentTool.size;
   }
 })
 
@@ -123,17 +123,17 @@ eraserBtn.addEventListener('click', () => {
 })
 
 
-eraserWidthDecrement.addEventListener('click', () => {
+eraserSizeDecrement.addEventListener('click', () => {
   if (currentTool.size > 1) {
     currentTool.size -= 1;
-    eraserWidthEle.textContent = currentTool.size;
+    eraserSizeEle.textContent = currentTool.size;
   }
 })
 
-eraserWidthIncrement.addEventListener('click', () => {
+eraserSizeIncrement.addEventListener('click', () => {
   if (currentTool.size < 50) {
     currentTool.size += 1;
-    eraserWidthEle.textContent = currentTool.size;
+    eraserSizeEle.textContent = currentTool.size;
   }
 })
 
